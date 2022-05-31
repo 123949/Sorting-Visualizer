@@ -1,0 +1,255 @@
+:root {
+  --primary-color: #03A9F4;
+  --secondary-color: #039BE5;
+}
+* {
+  /* Below is the standard CSS code one should add to get rid of default margins and padding which most of tge HTML elements have */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  user-select: none;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+  background: #222;
+}
+
+/* Title CSS */
+.title {
+  background-color: var(--primary-color);
+  text-align: center;
+  font-size: 1.2em;
+  padding-block: 0.5em;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Navbar CSS */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8em;
+  font-size: 16px;
+  min-height: 70px;
+  padding-block: 0.6em;
+  background-color: var(--secondary-color);
+  transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.navbar a {
+  all: unset;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+  background-color: #03A9F4;
+}
+.navbar a:hover {
+  background-color: transparent;
+}
+.navbar #menu {
+  width: fit-content;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 8px;
+  background-color: #03A9F4;
+  color: white;
+}
+.navbar > .icon {
+  display: none;
+}
+#menu,
+#random,
+#start {
+  cursor: pointer;
+}
+
+/* Center css */
+
+.main-con {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-left: 5%;
+}
+
+
+pre {
+  max-height: 500px !important; 
+  min-height: 500px !important;
+}
+
+.center,
+.code-container {
+  /*margin: 0 auto;*/
+  box-shadow: #fff3 0px 1px 4px; /* Added shadow to make page border free */
+  height: 500px;
+  width: 410px;
+  max-height: 731px;
+}
+
+.center {
+  width: 50%;
+}
+
+.code-container {
+  width: 40%;
+  box-shadow: 0 0 0 0 #0000;
+}
+
+.array {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100%;
+  height: 100%;
+  padding: 1rem;
+  flex-direction: row;
+}
+.cell {
+  display: flex;
+  align-items: flex-start;
+  flex: 0.5;
+  width: 0.000001%;
+  margin: 1px;
+  background-color: #d6d6d6;
+  resize: horizontal;
+  position: relative;
+  transition: all 0.4s ease-in;
+}
+.cell.done {
+  background-color: #9cec5b;
+  border-color: #9cec5b;
+  color: white;
+  transition: all 0.4s ease-out;
+}
+.cell.visited {
+  border-color: #6184d8;
+  background-color: #6184d8;
+  color: white;
+  transition: 0.5s;
+}
+.cell.current {
+  border-color: #50c5b7;
+  background-color: #50c5b7;
+  color: white;
+  transition: all 0.4s ease-out;
+}
+.cell.min {
+  background-color: #ff1493;
+  border-color: #ff1493;
+  color: white;
+  transition: all 0.4s ease-out;
+}
+
+/* Footer CSS */
+.fa.fa-heart {
+  color: #eb2c13;
+}
+footer {
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  padding: 1.6em;
+}
+.footer > p:nth-child(1) {
+  margin-bottom: 0.6em;
+}
+.link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff5252;
+  font-size: 20px;
+}
+
+.custom-confirm {
+  position: fixed;
+  height: 12vmin;
+  width: 30vmin;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #444;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+  align-items: center;
+  display: none;
+}
+
+.custom-confirm .buttons {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-confirm .buttons span {
+  background: #03A9F4;
+  padding:.7vmin 2vmin .7vmin 2vmin;
+  color: #fff;
+  margin: 1vmin;
+}
+
+.custom-confirm .buttons span.no {
+  background: #F44336;
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    gap: 0.4em;
+  }
+  .title {
+    font-size: 17px;
+  }
+  .navbar *,
+  .navbar a {
+    font-size: 14px;
+  }
+  .footer {
+    font-size: 18px;
+  }
+  a#random {
+    order: 4;
+  }
+  a.start {
+    order: 5;
+  }
+}
+@media screen and (max-width: 700px) {
+  .center {
+    width: 95%;
+  }
+  .main-con{
+    display: flex;
+    flex-direction: column;
+  }
+  .code-container{
+    width:85%;
+    margin-top:20px;
+  }
+  .nav-container{
+    margin-top:10px;
+  }
+
+}
+#copyLogo{
+  color:white;
+  
+}
+
